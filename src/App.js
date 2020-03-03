@@ -2,6 +2,7 @@ import React from 'react';
 import Participant from './Participant';
 import Stage from './Stage';
 import Chat from './Chat';
+import './App.css';
 
 class App extends React.Component {
     static defaultProps = {

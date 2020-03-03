@@ -1,0 +1,20 @@
+main {
+  display: flex;
+}
+
+.Chat-Box {
+  border: solid;
+  display: flex;
+}
+
+.Participants {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Stage {
+  display: flex;
+  flex-direction: row;
+}
