@@ -11,31 +11,41 @@ class App extends React.Component {
           chatEvents: []
         }
       };
+
     
     render () {
         const { store } = this.props;
+        const onStage = store.participants.filter(list => list.onStage === true);
+
         return (
             <main className='App'>
                 <div className="Chat-Box"> 
-                    <div className="Participants Right">
-                        {store.participants.map(list => (
+                    <div className="Buttons">
+                        <input type="submit" name="toggle" value="Toggle"></input>
+                    </div>
+                    <div className="Chat-Box-Container">
+                        <div className="Participants Right">
+                            {store.participants.map(list => 
                                 <Participant 
                                     key={list.id} 
                                     name={list.name} 
-                                    avatar={list.avatar}/>
-                        ))}
-                    </div>
-                    <div className="Chat Left">
-                        {store.chatEvents.map(list => 
-                        <Chat 
-                          key={list.participantId} type={list.type} 
-                          message={list.message}
-                          time={list.time}
-                          timestamp={list.timestamp}/>)}
+                                    avatar={list.avatar}
+                                    inSession={list.inSession}
+                                    />
+                            )}
+                        </div>
+                        <div className="Chat Left">
+                            {store.chatEvents.map(list => 
+                            <Chat 
+                            key={list.participantId} type={list.type} 
+                            message={list.message}
+                            time={list.time}
+                            timestamp={list.timestamp}/>)}
+                        </div>
                     </div>
                 </div>
                 <div className="Stage">
-                    {store.participants.map(list => (
+                    {onStage.map(list => (
                             <Stage 
                             key={list.id} 
                             name={list.name} 

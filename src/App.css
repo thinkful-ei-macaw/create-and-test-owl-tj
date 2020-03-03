@@ -3,8 +3,21 @@ main {
 }
 
 .Chat-Box {
-  border: solid;
   display: flex;
+  flex-direction: column;
+}
+
+.Buttons {
+  float: right;
+}
+
+.Chat-Box-Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Chat {
+  border: solid;
 }
 
 .Participants {
